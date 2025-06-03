@@ -127,7 +127,16 @@ class ConsoleCapture:
     def _connect_websocket(self, ws_url: str):
         """Connect to Chrome via WebSocket."""
         try:
-            self.ws = websocket.create_connection(ws_url, timeout=10)
+            # Set headers to avoid CORS issues
+            headers = {
+                "Origin": "http://localhost:9222",
+                "Host": "localhost:9222"
+            }
+            self.ws = websocket.create_connection(
+                ws_url, 
+                timeout=10,
+                header=headers
+            )
         except Exception as e:
             raise ChromeConnectionError(f"Failed to connect to Chrome DevTools: {str(e)}")
     

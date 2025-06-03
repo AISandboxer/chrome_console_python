@@ -98,6 +98,7 @@ class ChromeBrowser:
             f"--user-data-dir={self.user_data_dir}",
             "--no-first-run",
             "--no-default-browser-check",
+            "--remote-allow-origins=*",  # Allow WebSocket connections from any origin
         ]
         
         if headless:
