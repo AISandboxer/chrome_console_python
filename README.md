@@ -24,8 +24,15 @@ Or install from source:
 ```bash
 git clone https://github.com/yourusername/chrome-console-capture.git
 cd chrome-console-capture
+
+# Recommended: Use a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 pip install -e .
 ```
+
+For detailed virtual environment setup instructions, see [VIRTUAL_ENV_SETUP.md](VIRTUAL_ENV_SETUP.md).
 
 ## Quick Start
 
@@ -343,13 +350,18 @@ except ChromeConnectionError as e:
 git clone https://github.com/yourusername/chrome-console-capture.git
 cd chrome-console-capture
 
-# Create virtual environment
-python -m venv venv
+# Create and activate virtual environment (recommended)
+python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install in development mode
+# Install dependencies
+pip install -r requirements.txt
+
+# Install in development mode with dev dependencies
 pip install -e ".[dev]"
 ```
+
+See [VIRTUAL_ENV_SETUP.md](VIRTUAL_ENV_SETUP.md) for detailed virtual environment instructions.
 
 ### Run Tests
 

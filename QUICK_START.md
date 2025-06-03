@@ -16,11 +16,24 @@ pip install chrome-console-capture
 # Clone or download this repository
 cd chrome_console_python
 
+# Create and activate virtual environment (recommended)
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
 # Install in development mode
 pip install -e .
 
 # Or install normally
 pip install .
+```
+
+**Quick Test with Virtual Environment:**
+```bash
+# Run the automated test script
+./test_in_venv.sh
 ```
 
 ## Basic Usage
